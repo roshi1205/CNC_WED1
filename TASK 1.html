@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <style>
+    .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+li{
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.15);
+    bottom: -160px;
+    animation: square 40s infinite;
+    transition-timing-function: linear;
+}
+@keyframes square{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-700px) rotate(600deg);
+    }
+}
+li:nth-child(1){
+    left: 10%;
+}
+li:nth-child(2){
+    left: 15%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+li:nth-child(3){
+    left: 20%;
+    animation-delay: 4s;
+}
+li:nth-child(4){
+    left: 25%;
+    width: 160px;
+    height: 160px;
+    animation-delay: 22s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(5){
+    left: 30%;
+}
+li:nth-child(6){
+    left: 35%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 50s;
+    background: rgba(255,255,255,0.2);
+}
+li:nth-child(7){
+    left: 40%;
+    width: 140px;
+    height: 140px;
+    animation-duration: 40s;
+}
+li:nth-child(8){
+    left: 50%;
+}
+li:nth-child(9){
+    left: 55%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 10s;
+    animation-duration: 50s;
+}
+li:nth-child(10){
+    left: 60%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 22s;
+    background: rgba(255,255,255,0.15);
+}
+li:nth-child(11){
+    left: 70%;
+}
+li:nth-child(12){
+    left: 80%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+li:nth-child(13){
+    left: 85%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 22s;
+    background: rgba(186, 62, 62, 0.15);
+}
+li:nth-child(14){
+    left: 90%;
+    width: 100px;
+    height: 120px;
+    animation-delay: 5s;
+}
+li:nth-child(15){
+    left: 100%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #5d8697, #A9B3C2);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .calculator {
+      width: 300px;
+      background: #333;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      color: #FFF;
+      font-size: 14px;
+    }
+
+    .display {
+      width: 100%;
+      height: 70px;
+      background: #000;
+      color: rgb(159, 183, 94);
+      text-align: right;
+      padding: 4px;
+      border-radius: 6px;
+      font-size: 50px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 2fr);
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #555;
+      color: #FFF;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: #2de6d0;
+    }
+
+    .highlight {
+      background: #2cd02442;
+      color: #000;
+    }
+
+    .highlight:hover {
+      background: #904a58;
+    }
+
+    .function-key {
+      background: #444;
+    }
+
+    .function-key:hover {
+      background: #ac2424;
+    }
+  </style>
+</head>
+<body>
+  <ul class="bg">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+  <div class="calculator">
+    <div class="display">0</div>
+    <div class="buttons">
+      <button class="function-key">MODE</button>
+      <button class="function-key">DEL</button>
+      <button class="function-key">AC</button>
+      <button class="function-key">Ans</button>
+      <button class="highlight">=</button>
+
+      
+      <button class="function-key">sin</button>
+      <button class="function-key">cos</button>
+      <button class="function-key">tan</button>
+      <button class="function-key">log</button>
+      <button class="function-key">ln</button>
+
+      
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+      <button class="function-key">^</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+      <button class="function-key">(</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button class="function-key">)</button>
+
+      <button>0</button>
+      <button>.</button>
+      <button class="function-key">EXP</button>
+      <button>+</button>
+      <button class="function-key">π</button>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const display = document.querySelector(".display");
+    let expression = "";
+
+    function updateDisplay() {
+      display.textContent = expression || "0";
+    }
+
+    function evaluateExpression() {
+      try {
+        const result = eval(expression);
+        expression = result.toString();
+        updateDisplay();
+      } catch {
+        expression = "Error";
+        updateDisplay();
+      }
+    }
+
+    function handleButtonClick(value) {
+      if (value === "=") {
+        evaluateExpression();
+      } else if (value === "AC") {
+        expression = "";
+        updateDisplay();
+      } else if (value === "DEL") {
+        expression = expression.slice(0, -1);
+        updateDisplay();
+      } else if (value === "π") {
+        expression += Math.PI.toFixed(8);
+        updateDisplay();
+      } else if (value === "EXP") {
+        expression += "e";
+        updateDisplay();
+      } else if (value === "Ans") {
+      } else if (value === "^") {
+        expression += "**";
+        updateDisplay();
+      } else if (["sin", "cos", "tan", "log", "ln"].includes(value)) {
+        let func = {
+          sin: "Math.sin",
+          cos: "Math.cos",
+          tan: "Math.tan",
+          log: "Math.log10",
+          ln: "Math.log"
+        }[value];
+        expression += `${func}(`;
+        updateDisplay();
+      } else {
+        expression += value;
+        updateDisplay();
+      }
+    }
+
+    document.querySelectorAll("button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        handleButtonClick(btn.innerText.trim());
+      });
+    });
+
+    updateDisplay();
+  });
+</script>
+
+</body>
+</html>
