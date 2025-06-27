@@ -1,4 +1,5 @@
-# CNC_WED1
+Task 1 
+
 WEB DEVLOPMENT 
 
 An elegant and fully interactive calculator designed with pure HTML, CSS, and JavaScript. This project reflects modern UI principles, efficient DOM scripting, and keyboard-friendly functionality. Ideal for beginners and those improving frontend skills.
